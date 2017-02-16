@@ -1,0 +1,8 @@
+Filter 200
+
+$ bzcat wc_day*.out.bz2 | grep -v "200" | awk -F' ' '{print $1}'
+
+
+Get land
+
+$ bzcat wc_day*.out.bz2 | awk -F' ' '{print $1}'|
