@@ -1,0 +1,4 @@
+bzcat wc_day*.out.bz2 | grep -v "200" | awk -F' ' '{print $1}' > p1.txt
+
+source /vol/share/groups/liacs/scratch/pt2017/pt2017.env
+ipaddress=$(bzcat wc_day*.out.bz2 | awk -F' ' '{print $1}')
