@@ -1,0 +1,1 @@
+bzcat wc_day*.out.bz2 | grep -v "200" | awk -F' ' '{print $1}' > p1.txt

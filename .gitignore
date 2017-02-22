@@ -5,10 +5,10 @@
 .gitattributes
 
 # Generic datafiles
-??
 *.bz2
 *.png
 *.bmp
+*.*~
 
 # Eclipse files
 .cproject
