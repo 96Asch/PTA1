@@ -8,6 +8,7 @@
 *.bz2
 *.png
 *.bmp
+*.txt
 *.*~
 
 # Eclipse files
