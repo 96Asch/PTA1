@@ -2,5 +2,6 @@ source /vol/share/groups/liacs/scratch/pt2017/pt2017.env
 bzcat wc_day*.out.bz2 | awk -F' ' '{print $1}' > ipaddress
 chmod +x geo.py
 ./geo.py
-cat landcode | sort | uniq -c | head
-rm ipaddress
+cat landcodes | sort | uniq -c | head
+rm ipaddress landcodes
+
