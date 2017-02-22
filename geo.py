@@ -1,9 +1,11 @@
 #!/usr/bin/python
 import GeoIP
 gi = GeoIP.new(GeoIP.GEOIP_MEMORY_CACHE)
-with open("p1.txt","r") as f:
+out = open("landcodes", "w")
+with open("ipaddress","r") as f:
     for line in f:
-        test1 = gi.country_code_by_addr(line)
-	test1 = test1.rstrip('\n')
-	print(line)
+		line = line.rstrip('\n')
+        land = gi.country_code_by_addr(line)
+		out.write(land)
+		print land
 

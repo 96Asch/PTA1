@@ -7,4 +7,8 @@ $ bzcat wc_day*.out.bz2 | grep -v "200" | awk -F' ' '{print $1}' > p1.txt
 
 P2
 source /vol/share/groups/liacs/scratch/pt2017/pt2017.env
-$ bzcat wc_day*.out.bz2 | awk -F' ' '{print $1}'
+bzcat wc_day*.out.bz2 | awk -F' ' '{print $1}'
+
+
+P3
+
