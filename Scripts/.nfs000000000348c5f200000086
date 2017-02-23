@@ -1,0 +1,8 @@
+src="/vol/share/groups/liacs/scratch/pt2017/opdracht1/"
+num="$(ls -1 /vol/share/groups/liacs/scratch/pt2017/opdracht1/ | wc -l)"
+for i in $src/*.bz2; do
+	echo "reading file: i";
+	bzcat $i | awk '{print $4 $5 " " $10}'| tr  []/:+ " " | awk '{h[$4] += $NF} END{for (i in h) print i, h[i]}' | sort > ../temp/byte_data.txt;
+done
+cat ../temp/byte_data.txt | awk '{print $0 $1/$num}'
+

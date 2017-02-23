@@ -1,2 +1,0 @@
-bzcat wc_day6_1.out.bz2 | awk '{print $4 $5 " " $10}'| tr  []/:+ " " > p3.txt
-
