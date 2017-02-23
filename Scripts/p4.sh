@@ -3,4 +3,5 @@ temp="../temp"
 python="../python"
 result="../Result"
 
+bzcat wc_day6_1.out.bz2 | grep -v '200','3??' | awk '{print $7}'
 
