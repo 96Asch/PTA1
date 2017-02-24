@@ -4,7 +4,7 @@ gi = GeoIP.new(GeoIP.GEOIP_MEMORY_CACHE)
 out = open("../temp/landcodes.txt", "w")
 with open("../temp/ipaddress.txt","r") as f:
     for line in f:
-	line = line.rstrip('\n')
+		line = line.rstrip('\n')
         land = gi.country_code_by_addr(line)
 	temp = str(land)
 	out.write(temp+'\n')
