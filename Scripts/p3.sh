@@ -1,3 +1,7 @@
+#######################
+#Andrew Huang S1913999#
+#######################
+
 src="/vol/share/groups/liacs/scratch/pt2017/opdracht1"
 num="$(ls -1 /vol/share/groups/liacs/scratch/pt2017/opdracht1/*.bz2 | wc -l)"
 python="../python"
