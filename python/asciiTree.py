@@ -12,7 +12,7 @@ def calcAlignment (value, hits):
 def appendTreeList(treeArray, hits, rank, dirList, correction, deletion):
 	if deletion < 0:
 		deletion = deletion*-1
-	treeArray.append(hits + ' '*correction + "|   "*(rank - deletion) + "x----"*n + dirList[-deletion] + "/")
+	treeArray.append(hits + ' '*correction + "|   "*(rank - deletion) + "x----="*n + dirList[-deletion] + "/")
 	return
 
 # Main function to split the data from a txt file and properly
@@ -39,7 +39,10 @@ with open("../temp/tree_data.txt","r") as f:
 
 	correct = calcAlignment(value, "Hits:")
 	outFile.write("Hits:" + " "*correct + "Directory:\n")
+	print("Hits:" + " "*correct + "Directory:\n")	
 	for node in treeArray:
-		outFile.write(node)
+		#print node		
+		outFile.write(node + "\n")
 f.close()
+outFile.close()
 			
