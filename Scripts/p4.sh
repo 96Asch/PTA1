@@ -15,7 +15,7 @@ files="wc_day*.out.bz2"
 # We then isolate the directory paths and cut off the filenames.
 # Then we sort and add the unique ones together and then sort again by the second element which is then fed to the python script
 # to produce an ascii tree.
-bzcat $src/$files | grep -P '(200|3\d\d (\d+|-)$)' | awk '{print $7}' | sed 's%/[^/]*$%/%' | sort | uniq -c | sort -k2  | python $python/asciiTree.py
+bzcat $src/$files | grep -P '(200|3\d\d (\d+|-)$)' | awk '{print $7}' | sed 's%/[^/]*$%/%' | sort | uniq -c  | python $python/asciiTree.py
 
 
 

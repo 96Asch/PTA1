@@ -13,7 +13,7 @@ files="wc_day*.out.bz2"
 # From the files, we filter the 4, 5 and last element from the line and then for each 4th element we add the bytes at
 # the end of the line together for each day.
 for i in $src/$files; do
-	bzcat $files | awk '{print $4 $5 $NF}'| tr  []/:+ " " | awk '{h[$4] += $NF} END{for (i in h) print i, h[i]}' >> $temp/byte_data.txt;
+	bzcat $i | awk '{print $4 $5 $NF}'| tr  []/:+ " " | awk '{h[$4] += $NF} END{for (i in h) print i, h[i]}' >> $temp/byte_data.txt;
 done
 
 
