@@ -1,22 +1,21 @@
+#!/bin/bash
+
 #######################
 #Andrew Huang S1913999#
 #######################
 
+
+
 src="/vol/share/groups/liacs/scratch/pt2017/opdracht1"
-temp="../temp"
-python="../python"
+temp="temp"
+python="python"
 result="../Result"
+files="wc_day*.out.bz2"
 
-echo "Processing data...(1/2)"
-bzcat $src/wc_day*.out.bz2 | awk -F' ' '{print $1}' > $temp/ipaddress.txt
-chmod +x $python/geo.py
+# We isolate the IP addresses by delimiting using the empty space and retrieving the first element,
+# then we sort and count the unique occurrences and sort again by number and reversing the outcome so that
+# the outcome will list the countries in descending order, then we only have to get the first 10 countries
+# of the list and output it to the console.
+bzcat $src/$files | cut -d ' ' -f 1| python $python/geo.py | sort | uniq -c | sort -rn | tail -n 10
 
-echo "Running python script..."
-./$python/geo.py
-
-echo "Processing data...(2/2)"
-cat $temp/landcodes.txt | sort | uniq -c | head > $result/p2_result.txt
-
-echo "Removing temp files..."
-rm $temp/ipaddress.txt $temp/landcodes.txt
 
